@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bg-primary-color: rgb(32, 31, 31);
+    --bg-fill-color: rgb(240, 233, 233);
+    --text-primary-color: rgb(233, 233, 233);
+    --bg-food-color:rgb(255, 50, 50);
+    /* for space */
+    --space-xs:4px;
+    --space-sm:8px;
+    --space-md:16px;
+    --space-lg:24px;
+    --space-xl:32px;
+    --space-2xl:40px;
+    --space-3xl:48px;
+    --space-4xl:56px;
+   /* for border*/
+   --border-primary-color:#333333;
+   /* for border radius*/
+    --border-radius-xs:4px;
+    --border-radius-sm:8px;
+    --border-radius-md:16px;
+    --border-radius-lg:24px;
+    --border-radius-xl:32px;
+    --border-radius-2xl:40px;
+    --border-radius-3xl:48px;
+    --border-radius-4xl:56px;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-primary-color);
+    color: var(--text-primary-color);
+    font-family: 'Courier New', Courier, monospace;
+}
+section{
+    padding: var(--space-2xl);
+    display: flex; flex-direction: column;
+    height: 100vh;
+   
+    gap: var(--space-lg);
+}
+section .infos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+.info{
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border-primary-color);
+    border-radius: var(--border-radius-xs);
+    
+}
+.board{
+    border: 1px solid var(--border-primary-color);
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(30px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(30px,1fr));
+    
+}
+.block{
+    /* height: 30px;
+    width: 30px; */
+    border: 1px solid var(--border-primary-color);
+}
+.fill{
+    background-color: var(--bg-fill-color);
+}
+.food{
+    background-color: var(--bg-food-color);
+}
+.modal{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal .game-over,
+.modal .start-game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+.btn{
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn:hover{
+    scale: 1.5;
+    background-color: aquamarine;
+}
+.modal .game-over{
+    display: none;
+}
+    
